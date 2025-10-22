@@ -1,0 +1,279 @@
+/* FUR CANVAS */
+#furCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}    
+
+/* POPUP STYLES */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 999;
+    animation: fadeIn 0.3s ease;
+}
+
+.popup-overlay.show {
+    display: block;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFFFFF;
+    padding: 25px;
+    border-radius: 15px;
+    border: 3px solid #000000;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    max-width: 350px;
+    width: calc(100% - 60px);
+    animation: slideInCenter 0.4s ease;
+}
+
+.popup.show {
+    display: block;
+}
+
+.popup::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid #000000;
+}
+
+.popup::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 12px solid #FFFFFF;
+    z-index: 1;
+}
+
+.scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05) 1px, transparent 1px, transparent 2px);
+    pointer-events: none;
+    border-radius: 15px;
+    z-index: 1;
+}
+
+.popup-text {
+    margin-bottom: 20px;
+    color: #000000;
+    line-height: 1.8;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    min-height: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.cursor {
+    display: inline-block;
+    width: 10px;
+    height: 20px;
+    background: #000000;
+    margin-left: 2px;
+    animation: blink 0.7s infinite;
+}
+
+.popup-buttons {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.btn {
+    padding: 12px 40px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: none;
+}
+
+.btn-primary {
+    background: #FFCCEF;
+    color: #000000;
+}
+
+.btn-primary:hover {
+    background: #FFB8E8;
+    box-shadow: 0 0 20px rgba(255, 204, 239, 0.6);
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideInCenter {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+}
+
+/* BODY AND CONTENT */
+body {
+    background: #fff;
+    font-size: 22px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;  
+}
+#content {
+    position: relative;
+    z-index: 1;
+    padding: 2px;
+}
+
+/* INTRO SECTION */
+.intro-section {
+   max-width: calc(100% - 4px);  /* 2px margin on each side */
+    margin: 10px auto 0;
+    padding: 0;
+    border-bottom: 0.5px solid #000;  /* Thin line separator */
+    font-family: 'Arial', 'Helvetica', sans-serif;  /* Serif font like reference */
+    line-height: 1;  /* Comfortable reading spacing */
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.intro-section h1 {
+    font-size: 31px;
+    margin-bottom: 2px;  
+    font-weight: normal;
+    padding-bottom: 1px;  
+  
+    font-family: 'Arial', 'Helvetica', sans-serif;  /* Sans-serif for heading */
+    text-transform: uppercase; 
+     line-height: 0.5 /* Heading is caps */
+}
+.intro-section h2 {
+    font-size: 31px;
+    margin-top: 3px;
+    margin-bottom: 2px;  /* Space after line */
+    font-weight: normal;
+    padding-bottom: 1px;  /* Space before line */
+    border-bottom: 0.5px solid #000;  /* Thin line separator */
+    font-family: 'Arial', 'Helvetica', sans-serif;  /* Sans-serif for heading */
+    text-transform: uppercase;  /* Heading is caps */
+}
+
+.intro-section p {
+    margin-bottom: 25px;  /* Space between paragraphs */
+}
+
+.intro-section strong {
+    font-weight: normal;  /* No bold, just regular */
+}
+
+/* MENU SECTION - Updated to match clean design */
+.menu-section {
+    max-width: calc(100% - 4px);  /* 2px margin on each side */
+    margin: 0 auto;
+    padding: 0;  /* No padding - starts from edge */
+    margin-top: 60px;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-list li {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    margin: 2px 0;
+    padding: 0;
+    border-bottom: none;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    line-height: 1;
+}
+
+.menu-list li:last-child {
+    border-bottom: none;
+}
+
+.menu-list a {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.menu-list a:hover {
+    color: #FFCCEF;
+    transform: translateX(10px);
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 388px) {
+    .menu-list li { 
+        font-size: 22px;  /* Smaller font so everything fits on one line */
+        line-height: 1;
+    }
+    .intro-section h1 { 
+        font-size: 22px; 
+    }
+    .intro-section { 
+        font-size: 22px; 
+    }
+    .popup { 
+        max-width: calc(100% - 40px); 
+        width: calc(100% - 40px); 
+        padding: 10px; 
+    }
+    .popup-text { 
+        font-size: 14px; 
+    }
+}

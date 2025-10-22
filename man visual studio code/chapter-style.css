@@ -1,0 +1,415 @@
+/* ============================================
+   CHAPTER PAGE STYLES
+   ============================================ */
+
+/* BACK BUTTON */
+.back-button {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+.back-button a {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 22px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.back-button a:hover {
+    color: #FFCCEF;
+}
+
+/* CHAPTER CONTENT */
+.chapter {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    line-height: 1.6;
+    font-size: 17px;
+    color: #000;
+}
+
+.chapter h1 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 17px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #000;
+    font-weight: normal;
+    color: #000;
+}
+
+.chapter h2 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #000;
+}
+
+.chapter h3 {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 17px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+.chapter p {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.chapter strong {
+    font-weight: bold;
+}
+
+.chapter em {
+    font-style: italic;
+}
+
+/* SPECIAL PARAGRAPH STYLES (optional) */
+.quote-paragraph {
+    margin-left: 40px;
+    margin-bottom: 35px;
+    font-style: italic;
+    color: #000;
+}
+
+.emphasis-paragraph {
+    margin-bottom: 50px;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+/* SECTION BREAKS - for extra space between sections */
+.section-break {
+    height: 50px;
+}
+
+.paragraph-spacer {
+    height: 10px;
+}
+
+/* ============================================
+   HEARTBEAT EFFECT (CHAPTER 2 ONLY)
+   ============================================ */
+.heartbeat-active {
+    animation: heartbeat 3s ease-in-out infinite;
+    transform-origin: center center;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.008);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.008);
+    }
+    70% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ============================================
+   COLLAPSIBLE MAIN SECTIONS
+   ============================================ */
+.section {
+    margin-bottom: -2px;
+    border-bottom: none;
+}
+
+.section-toggle {
+    cursor: pointer;
+    padding: 0px 0;
+    margin: 0;
+    font-size: 22px;
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-weight: normal;
+    user-select: none;
+    list-style: none;
+    display: block;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+     
+}
+
+.section-toggle:hover {
+    color: #FFCCEF;
+}
+
+/* Hide default arrow */
+.section-toggle::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom arrow */
+.section-toggle::before {
+    content: "→";
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+    font-size: 22px;
+}
+
+details[open].section .section-toggle::before {
+    transform: rotate(90deg);
+}
+
+.section-content {
+    padding: 0 0 30px 25px;
+}
+
+.section-content p {
+    margin-bottom: 25px;
+}
+
+/* ============================================
+   CHAPTER NAVIGATION
+   ============================================ */
+.chapter-nav {
+    max-width: 800px;
+    margin: 60px auto 40px;
+    padding: 30px 0;
+    border-top: 1px solid #000;
+}
+
+.next-chapter,
+.prev-chapter {
+    font-family: 'Arial', 'Helvetica', sans-serif;
+    font-size: 22px;
+    color: #000;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.next-chapter:hover,
+.prev-chapter:hover {
+    color: #FFCCEF;
+    transform: translateX(10px);
+}
+
+.prev-chapter:hover {
+    transform: translateX(-10px);
+}
+
+/* ============================================
+   CHAPTER-SPECIFIC BACKGROUNDS
+   ============================================ */
+.chapter-01 {
+    background: #fff;
+}
+
+.chapter-02 {
+    background: #fff;
+}
+
+.chapter-03 {
+    background: #cceaff;
+}
+
+.chapter-04 {
+    background: #ffe6e6;
+}
+
+.chapter-05 {
+    background: #fff;
+}
+
+.chapter-06 {
+    background: #2d2d3d;
+}
+
+.chapter-07 {
+    background: #fff4e6;
+}
+
+.chapter-08 {
+    background: #fff;
+}
+
+.chapter-09 {
+    background: #fff;
+}
+
+.chapter-10 {
+    background: #fff;
+}
+
+.chapter-11 {
+    background: #fff;
+}
+
+.chapter-12 {
+    background: #fff;
+}
+
+/* ============================================
+   WHITE TEXT FOR CHAPTERS 3, 4, 6, 7
+   ============================================ */
+
+/* Chapter 3 - White text */
+.chapter-03 .chapter,
+.chapter-03 .chapter h1,
+.chapter-03 .chapter h2,
+.chapter-03 .chapter h3,
+.chapter-03 .chapter p,
+.chapter-03 .section-toggle,
+.chapter-03 .back-button a,
+.chapter-03 .next-chapter,
+.chapter-03 .prev-chapter {
+    color: #fff;
+}
+
+.chapter-03 .chapter h1 {
+    border-bottom-color: #fff;
+}
+
+.chapter-03 .chapter-nav {
+    border-top-color: #fff;
+}
+
+/* Chapter 4 - White text */
+.chapter-04 .chapter,
+.chapter-04 .chapter h1,
+.chapter-04 .chapter h2,
+.chapter-04 .chapter h3,
+.chapter-04 .chapter p,
+.chapter-04 .section-toggle,
+.chapter-04 .back-button a,
+.chapter-04 .next-chapter,
+.chapter-04 .prev-chapter {
+    color: #fff;
+}
+
+.chapter-04 .chapter h1 {
+    border-bottom-color: #fff;
+}
+
+.chapter-04 .chapter-nav {
+    border-top-color: #fff;
+}
+
+/* Chapter 6 - White text */
+.chapter-06 .chapter,
+.chapter-06 .chapter h1,
+.chapter-06 .chapter h2,
+.chapter-06 .chapter h3,
+.chapter-06 .chapter p,
+.chapter-06 .section-toggle,
+.chapter-06 .back-button a,
+.chapter-06 .next-chapter,
+.chapter-06 .prev-chapter {
+    color: #fff;
+}
+
+.chapter-06 .chapter h1 {
+    border-bottom-color: #fff;
+}
+
+.chapter-06 .chapter-nav {
+    border-top-color: #fff;
+}
+
+/* Chapter 7 - White text */
+.chapter-07 .chapter,
+.chapter-07 .chapter h1,
+.chapter-07 .chapter h2,
+.chapter-07 .chapter h3,
+.chapter-07 .chapter p,
+.chapter-07 .section-toggle,
+.chapter-07 .back-button a,
+.chapter-07 .next-chapter,
+.chapter-07 .prev-chapter {
+    color: #fff;
+}
+
+.chapter-07 .chapter h1 {
+    border-bottom-color: #fff;
+}
+
+.chapter-07 .chapter-nav {
+    border-top-color: #fff;
+}
+
+/* Add more chapter-specific styles as needed */
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+    .chapter h1 {
+        font-size: 31px;
+    }
+    
+    .chapter {
+        font-size: 17px;
+    }
+    
+    .chapter p {
+        margin-bottom: 0px;
+    }
+    
+    .section-toggle {
+        font-size: 22px;
+        padding: 0px 0;
+    }
+    
+    .section-content {
+        padding-left: 15px;
+    }
+    
+    .back-button {
+        margin: 10px auto;
+    }
+    
+    .chapter-nav {
+        margin: 40px auto 20px;
+    }
+    
+    /* Reduce heartbeat intensity on mobile */
+    .heartbeat-active {
+        animation: heartbeat-mobile 3s ease-in-out infinite;
+    }
+    
+    @keyframes heartbeat-mobile {
+        0% {
+            transform: scale(1);
+        }
+        14% {
+            transform: scale(1.005);
+        }
+        28% {
+            transform: scale(1);
+        }
+        42% {
+            transform: scale(1.005);
+        }
+        70% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+}
