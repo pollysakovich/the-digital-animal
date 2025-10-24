@@ -530,8 +530,3 @@
     
     console.log('Chapter customizations loaded - Fur color:', window.furColor);
 })();
-    
-    enableKeyboardNavigation();
-    
-    console.log('Chapter customizations loaded - Fur color:', window.furColor);
-})();
