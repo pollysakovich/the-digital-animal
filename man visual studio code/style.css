@@ -19,11 +19,11 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.85);
     z-index: 999;
-    animation: fadeIn 0.3s ease;
 }
 
 .popup-overlay.show {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
 
 .popup {
@@ -40,7 +40,6 @@
     z-index: 1000;
     max-width: 350px;
     width: calc(100% - 60px);
-    animation: slideInCenter 0.4s ease;
 }
 
 .popup.show {
@@ -163,51 +162,67 @@
 body {
     background: #fff;
     font-size: 22px;
-    margin: 0;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 0;
     font-family: 'Arial', 'Helvetica', sans-serif;  
 }
 #content {
     position: relative;
     z-index: 1;
-    padding: 2px;
+    padding: 0px;
 }
 
 /* INTRO SECTION */
 .intro-section {
    max-width: calc(100% - 4px);  /* 2px margin on each side */
-    margin: 10px auto 0;
+    margin: 40x auto 0;
     padding: 0;
     border-bottom: 0.5px solid #000;  /* Thin line separator */
     font-family: 'Arial', 'Helvetica', sans-serif;  /* Serif font like reference */
-    line-height: 1;  /* Comfortable reading spacing */
+    line-height: 1.6;  /* Comfortable reading spacing */
     font-size: 17px;
     margin-bottom: 10px;
 }
 
 .intro-section h1 {
-    font-size: 31px;
-    margin-bottom: 2px;  
+    font-size: 50px;
+    margin-bottom: 3px;  
     font-weight: normal;
-    padding-bottom: 1px;  
+    padding-bottom: 0px;  
   
     font-family: 'Arial', 'Helvetica', sans-serif;  /* Sans-serif for heading */
     text-transform: uppercase; 
      line-height: 0.5 /* Heading is caps */
 }
 .intro-section h2 {
-    font-size: 31px;
-    margin-top: 3px;
-    margin-bottom: 2px;  /* Space after line */
+    font-size: 50px;
+    margin-top: 12px;
+    margin-bottom: 0px;  /* Space after line */
     font-weight: normal;
-    padding-bottom: 1px;  /* Space before line */
+    padding-bottom: 0px;  /* Space before line */
+    
+    font-family: 'Arial', 'Helvetica', sans-serif;  /* Sans-serif for heading */
+    text-transform: uppercase;  /* Heading is caps */
+line-height: 0.5 /* Heading is caps */
+}
+
+
+
+.intro-section h3 {
+    font-size: 50px;
+    margin-top: -16px;
+    margin-bottom: 0px;  /* Space after line */
+    font-weight: normal;
+    padding-bottom: 0px;  /* Space before line */
     border-bottom: 0.5px solid #000;  /* Thin line separator */
     font-family: 'Arial', 'Helvetica', sans-serif;  /* Sans-serif for heading */
     text-transform: uppercase;  /* Heading is caps */
 }
 
 .intro-section p {
-    margin-bottom: 25px;  /* Space between paragraphs */
+    margin-bottom: 0 px;
+    padding-left: 15px;  /* Space between paragraphs */
 }
 
 .intro-section strong {
@@ -219,7 +234,7 @@ body {
     max-width: calc(100% - 4px);  /* 2px margin on each side */
     margin: 0 auto;
     padding: 0;  /* No padding - starts from edge */
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 .menu-list {
@@ -230,14 +245,14 @@ body {
 
 .menu-list li {
     font-family: 'Arial', 'Helvetica', sans-serif;
-    font-size: 22px;
+    font-size: 30px;
     font-weight: normal;
     margin: 2px 0;
     padding: 0;
     border-bottom: none;
     text-transform: uppercase;
     letter-spacing: 0;
-    line-height: 1;
+    line-height: 0.8;
 }
 
 .menu-list li:last-child {
@@ -257,23 +272,35 @@ body {
 }
 
 /* MOBILE RESPONSIVE */
-@media (max-width: 388px) {
-    .menu-list li { 
-        font-size: 22px;  /* Smaller font so everything fits on one line */
-        line-height: 1;
+@media (max-width: 768px) {
+    /* Adjust body for mobile */
+    body {
+        margin: 20px auto;
+        max-width: 100%;
     }
-    .intro-section h1 { 
-        font-size: 22px; 
-    }
-    .intro-section { 
-        font-size: 22px; 
-    }
+    
+    /* Center the popup and make it fit */
     .popup { 
-        max-width: calc(100% - 40px); 
-        width: calc(100% - 40px); 
-        padding: 10px; 
+        position: fixed !important;
+        top: 50vh !important;
+        left: 50vw !important;
+        transform: translate(-50%, -50%) !important;
+        max-width: calc(100vw - 60px) !important;
+        width: calc(100vw - 60px) !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        max-height: 80vh;
+        overflow-y: auto;
     }
+    
     .popup-text { 
-        font-size: 14px; 
+        font-size: 13px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+    
+    .btn {
+        padding: 10px 30px;
+        font-size: 12px;
     }
 }
