@@ -4,9 +4,16 @@
 
 /* BACK BUTTON */
 .back-button {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     max-width: 800px;
-    margin: 0px auto;
-    padding: 0;
+    margin: 0;
+    padding: 0px;
+    background: inherit; 
+    z-index: 1000;
+   
 }
 
 .back-button a {
@@ -27,6 +34,7 @@
 .chapter {
     max-width: 800px;
     margin: 1px ;
+    margin-top: 100px;
     padding: 0;
     font-family: 'Arial', 'Helvetica', sans-serif;
     line-height: 1.6;
